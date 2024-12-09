@@ -12,6 +12,22 @@
             
             const newBalance = poysha + poysha1;
            document.getElementById("taka-one").innerText = newBalance;
+        
+        //    adding transaction history
+        const div = document.createElement("div");
+        div.classList.add('bg-white');
+        
+        div.innerHTML = `
+
+        <div class id="first-donation" = "border-2 shadow-lg">
+        <P class = "font-semibold ml-8"> ${poysha1} Taka is Donated for famine-2024 at Feni, Bangladesh</P> 
+        <p class = "ml-8 font-semibold text-opacity-[100%]"> Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time) </p>
+        </div>
+
+        `
+        document.getElementById('transaction-details').appendChild(div);
+        
+
         }
         else{
             alert("Invalid");
@@ -19,15 +35,24 @@
 
         // main-balance code
 
-        if(poysha1 < mainPoysha){
+        if(poysha1 < mainPoysha)
+            {
+                if(poysha1 <= 0 ){
+                    return 0;
+                }
+    
             const newBalance2 = mainPoysha - poysha1;
             document.getElementById("main-balance").innerText = newBalance2;
+
+           
+            
         }
         else{
-            alert("Invalid Type");
+            alert("do not have sufficient balance");
         }
         
-                
+    // 2nd banner javascript code
+
     })
 
     document.getElementById("donate1")
@@ -41,6 +66,18 @@
             
             const newBalance = poysha + poysha1;
            document.getElementById("taka-one1").innerText = newBalance;
+
+           const div = document.createElement("div");
+           div.classList.add('bg-white');
+           div.innerHTML = `
+   
+           <div id ="first-donation" class = "border-2 shadow-lg">
+           <P class = "font-semibold ml-8"> ${poysha1} Taka is Donated for famine-2024 at Feni, Bangladesh</P> 
+
+           </div>
+   
+           `
+           document.getElementById('transaction-details').appendChild(div);
         }
         else{
             alert("Invalid");
@@ -53,12 +90,14 @@
             document.getElementById("main-balance").innerText = newBalance2;
         }
         else{
-            alert("Invalid Type");
+            alert("do not have sufficient balance");
         }
     
         
 
     })
+
+    // 3rd banner javascript code
 
     document.getElementById("donate2")
     .addEventListener('click', function(event){
@@ -70,9 +109,21 @@
             
             const newBalance = poysha + poysha1;
            document.getElementById("taka-one1").innerText = newBalance;
+           const div = document.createElement("div");
+           div.classList.add('bg-white');
+           div.innerHTML = `
+   
+           <div class = "border-2 shadow-lg">
+           <P class = "font-semibold ml-8"> ${poysha1} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</P> 
+           </div>
+   
+           `
+           document.getElementById('transaction-details').appendChild(div);
+           
+           
         }
         else{
-            alert("Invalid");
+            alert("invalid type");
         }
 
         // main-balance code
@@ -80,26 +131,16 @@
         if(poysha1 < mainPoysha){
             const newBalance2 = mainPoysha - poysha1;
             document.getElementById("main-balance").innerText = newBalance2;
+            
         }
         else{
-            alert("Invalid Type");
+            alert("do not have sufficient balance");
         }
 
     })
     
     
-    document.getElementById("main-btn1")
-    .addEventListener('click',function(){
-        
-     document.getElementById("content").classList.add('hidden');
-        
-    })
-    document.getElementById("main-btn")
-    .addEventListener('click', function(){
-        document.getElementById("content").classList.remove('hidden');
-    })
-
-
+    
 
 
 
